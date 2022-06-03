@@ -12,87 +12,88 @@ class Home extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double widgth = MediaQuery.of(context).size.width;
 
-    return  Scaffold(
-        backgroundColor: Colors.white,
-        body: SafeArea(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
           child: Stack(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Image(
-                            image: AssetImage('assets/logo.png'),
-                            width: 100,
-                          ),
-                          Icon(Icons.info)
-                        ]),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      'Hello John,',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                    Text(
-                      'Some Text Here,',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
-                    ),
-                    Text(
-                      'Some More Text Here,',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 19,
-                          color: Colors.blue),
-                    ),
-                    SizedBox(height: 10),
-                  ]),
-            ),
-            Positioned(
-              right: -60,
-              top: 140,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image(
-                    image: AssetImage('assets/hero.png'),
-                    width: 280,
-                    height: 230,
-                  )
-                ],
-              ),
-            ),
-
-            Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
-                child: Container(
-                  
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(25),
-                          topRight: Radius.circular(25)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 255, 184, 179),
-                          blurRadius: 15.0,
-                          spreadRadius: 0.5,
-                          offset: Offset(1, 1),
-                        )
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Image(
+                          image: AssetImage('assets/logo.png'),
+                          width: 100,
+                        ),
+                        Icon(Icons.info)
                       ]),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                  child: Column(
-                    children: <Widget>[
-                      Container(
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    'Hello John,',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  Text(
+                    'Some Text Here,',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                  ),
+                  Text(
+                    'Some More Text Here,',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 19,
+                        color: Colors.blue),
+                  ),
+                  SizedBox(height: 10),
+                ]),
+          ),
+          Positioned(
+            right: -60,
+            top: 140,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/hero.png'),
+                  width: 280,
+                  height: 230,
+                )
+              ],
+            ),
+          ),
+
+          Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25),
+                        topRight: Radius.circular(25)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 255, 184, 179),
+                        blurRadius: 15.0,
+                        spreadRadius: 0.5,
+                        offset: Offset(1, 1),
+                      )
+                    ]),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                child: Column(
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        print('Search button Pressed');
+                      },
+                      child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -129,10 +130,15 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        print('Show All Pressed');
+                      },
+                      child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -153,7 +159,7 @@ class Home extends StatelessWidget {
                             ),
                             Container(
                                 child: Text(
-                              'Show All',
+                              'Browse Breeds',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
@@ -168,12 +174,17 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Container(
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                            print('Pressed Cat Facts');
+                          },
+                          child: Container(
                             width: widgth * .425,
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
@@ -189,7 +200,7 @@ class Home extends StatelessWidget {
                                 ),
                                 Container(
                                     child: Text(
-                                  'Show All',
+                                  'Cat Facts',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -199,10 +210,15 @@ class Home extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Container(
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            print('Pressed Care for Cats');
+                          },
+                          child: Container(
                             width: widgth * .425,
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
@@ -218,7 +234,7 @@ class Home extends StatelessWidget {
                                 ),
                                 Container(
                                     child: Text(
-                                  'Show All',
+                                  'Caring Tips',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -227,17 +243,17 @@ class Home extends StatelessWidget {
                                 )),
                               ],
                             ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ))
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ))
 
-            /// A container with a box decoration, padding, and a column with a container inside.
-          ],
-        )),
-      
+          /// A container with a box decoration, padding, and a column with a container inside.
+        ],
+      )),
     );
   }
 }
